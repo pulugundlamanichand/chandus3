@@ -1,89 +1,62 @@
-body {
+* {
   margin: 0;
-  font-family: "Segoe UI", sans-serif;
-  line-height: 1.6;
-  background-color: #f9f9f9;
-  color: #333;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.container {
-  width: 90%;
-  max-width: 1000px;
-  margin: auto;
-  padding: 20px 0;
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f4f4f4;
 }
 
 header {
-  background: #004aad;
+  background-color: #1e1e2f;
   color: white;
-  padding: 20px 0;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-header h1 {
-  margin: 0;
-  text-align: center;
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
-nav {
-  text-align: center;
-  margin-top: 10px;
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
 }
 
-nav a {
+.nav-links a {
   color: white;
-  margin: 0 15px;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+main {
+  padding: 2rem;
 }
 
 .hero {
-  background: url('https://source.unsplash.com/1600x500/?travel') no-repeat center center/cover;
-  color: white;
-  padding: 100px 0;
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 8px;
   text-align: center;
 }
 
-.hero h2 {
-  font-size: 36px;
+.hero h1 {
+  font-size: 2rem;
+  color: #333;
 }
 
 .hero p {
-  font-size: 20px;
-  margin: 20px 0;
-}
-
-.btn {
-  background: #004aad;
-  color: white;
-  padding: 12px 25px;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 5px;
-}
-
-.info-section {
-  padding: 40px 0;
-}
-
-.bg-light {
-  background-color: #f0f4f8;
-}
-
-.info-section ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.info-section ul li {
-  background: #e6f0ff;
-  margin: 10px 0;
-  padding: 10px;
-  border-left: 5px solid #004aad;
-}
-
-footer {
-  background: #222;
-  color: white;
-  text-align: center;
-  padding: 20px 0;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  color: #555;
 }
