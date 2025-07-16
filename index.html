@@ -3,154 +3,116 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pulugundla Manichand Portfolio</title>
+  <title>Trading Account - Pulugundla Manichand</title>
   <style>
-    /* Reset */
-    * {
-      box-sizing: border-box;
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f7f9fc;
+      color: #333;
       margin: 0;
       padding: 0;
     }
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f0f4f8;
-      color: #1a1a1a;
-      line-height: 1.6;
-    }
-
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
     header {
-      background-color: #0b3954;
-      color: #ffffff;
-      padding: 40px 0 30px;
+      background-color: #1e2a38;
+      color: white;
+      padding: 20px 0;
       text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
     header h1 {
-      font-size: 3.5rem;
-      font-weight: 900;
+      margin: 0;
+      font-size: 2.5rem;
       letter-spacing: 2px;
-      margin-bottom: 10px;
     }
 
-    header p {
-      font-size: 1.3rem;
-      color: #82c0cc;
-      font-weight: 600;
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 20px;
     }
 
-    nav {
-      margin-top: 20px;
-    }
-
-    nav a {
-      color: #ffffff;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: 600;
-      font-size: 1.1rem;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover,
-    nav a:focus {
-      color: #ffd166;
-      outline: none;
-    }
-
-    .hero {
-      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
-      color: white;
-      text-align: center;
-      padding: 100px 20px;
-      text-shadow: 1px 1px 10px rgba(0,0,0,0.8);
-    }
-
-    .hero h2 {
-      font-size: 2.8rem;
-      margin-bottom: 20px;
-      font-weight: 700;
-    }
-
-    .hero p {
-      font-size: 1.3rem;
-      max-width: 600px;
-      margin: 0 auto 40px;
-    }
-
-    .btn {
-      background-color: #ffd166;
-      color: #0b3954;
-      font-weight: 700;
-      font-size: 1.1rem;
-      padding: 15px 35px;
-      border: none;
-      border-radius: 30px;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      transition: background-color 0.3s ease;
-    }
-
-    .btn:hover,
-    .btn:focus {
-      background-color: #fcbf49;
-      outline: none;
-    }
-
-    section {
-      padding: 60px 0;
+    .account-summary {
       background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin-bottom: 40px;
+    }
+
+    .account-summary h2 {
+      margin-bottom: 20px;
+      color: #1e2a38;
+    }
+
+    .summary-grid {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .summary-item {
+      flex: 1 1 30%;
+      background: #f0f4f8;
+      margin: 10px;
+      padding: 20px;
+      border-radius: 6px;
+      text-align: center;
+      box-shadow: inset 0 0 5px rgba(0,0,0,0.05);
+    }
+
+    .summary-item h3 {
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    .summary-item p {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #1e2a38;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    th, td {
+      padding: 15px 20px;
+      text-align: left;
       border-bottom: 1px solid #ddd;
     }
 
-    section:nth-child(even) {
-      background: #e7f0f7;
+    th {
+      background-color: #1e2a38;
+      color: white;
+      font-weight: 600;
     }
 
-    h2 {
-      font-size: 2.2rem;
-      color: #0b3954;
-      margin-bottom: 25px;
-      text-align: center;
-    }
-
-    p, ul {
-      max-width: 700px;
-      margin: 0 auto 20px;
-      font-size: 1.1rem;
-      line-height: 1.5;
-    }
-
-    ul {
-      list-style: square inside;
-      padding-left: 0;
+    tr:hover {
+      background-color: #f0f4f8;
     }
 
     footer {
       text-align: center;
-      padding: 25px 0;
-      background-color: #0b3954;
-      color: #fff;
-      font-weight: 500;
+      padding: 20px 10px;
+      color: #888;
       font-size: 0.9rem;
+      margin-top: 40px;
+      border-top: 1px solid #ddd;
     }
 
     @media (max-width: 600px) {
-      header h1 {
-        font-size: 2.5rem;
+      .summary-grid {
+        flex-direction: column;
       }
-      .hero h2 {
-        font-size: 2rem;
-      }
-      nav a {
-        display: block;
+      .summary-item {
         margin: 10px 0;
       }
     }
@@ -159,49 +121,75 @@
 <body>
 
   <header>
-    <div class="container">
-      <h1>Pulugundla Manichand</h1>
-      <p>Passionate Travel & Tourism Professional</p>
-      <nav aria-label="Primary navigation">
-        <a href="#about">Who I Am</a>
-        <a href="#services">What I Offer</a>
-        <a href="#contact">Get In Touch</a>
-      </nav>
-    </div>
+    <h1>Pulugundla Manichand Trading Account</h1>
   </header>
 
-  <section class="hero" role="banner">
-    <div class="container">
-      <h2>Discover the World with Confidence</h2>
-      <p>Helping you master travel management, planning, and consultancy with real-world skills and expertise.</p>
-      <a href="#services" class="btn">Explore Services</a>
-    </div>
-  </section>
+  <main class="container">
 
-  <section id="about" role="region" aria-labelledby="about-title">
-    <h2 id="about-title">Who I Am</h2>
-    <p>Hello! I am Pulugundla Manichand, dedicated to shaping future travel professionals. With years of experience in tour management and travel consulting, I bring practical knowledge and passion to every student I mentor.</p>
-  </section>
+    <section class="account-summary" aria-labelledby="summary-title">
+      <h2 id="summary-title">Account Summary</h2>
+      <div class="summary-grid">
+        <div class="summary-item">
+          <h3>Available Balance</h3>
+          <p>₹ 150,000.00</p>
+        </div>
+        <div class="summary-item">
+          <h3>Open Positions</h3>
+          <p>₹ 85,450.00</p>
+        </div>
+        <div class="summary-item">
+          <h3>Profit / Loss</h3>
+          <p style="color: green;">₹ 12,750.00</p>
+        </div>
+      </div>
+    </section>
 
-  <section id="services" role="region" aria-labelledby="services-title">
-    <h2 id="services-title">What I Offer</h2>
-    <ul>
-      <li>🌍 Comprehensive Tour Management Training</li>
-      <li>🛫 Airline Ticketing and Global Distribution Systems (GDS)</li>
-      <li>📚 Travel Consultancy Certification</li>
-      <li>📸 Digital Marketing & Travel Blogging Strategies</li>
-    </ul>
-  </section>
+    <section aria-labelledby="transactions-title">
+      <h2 id="transactions-title">Recent Transactions</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Type</th>
+            <th>Symbol</th>
+            <th>Quantity</th>
+            <th>Price (₹)</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2025-07-14</td>
+            <td>Buy</td>
+            <td>INFY</td>
+            <td>100</td>
+            <td>1500.50</td>
+            <td>Completed</td>
+          </tr>
+          <tr>
+            <td>2025-07-13</td>
+            <td>Sell</td>
+            <td>TCS</td>
+            <td>50</td>
+            <td>3200.00</td>
+            <td>Completed</td>
+          </tr>
+          <tr>
+            <td>2025-07-10</td>
+            <td>Buy</td>
+            <td>RELIANCE</td>
+            <td>30</td>
+            <td>2500.75</td>
+            <td>Pending</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
 
-  <section id="contact" role="region" aria-labelledby="contact-title">
-    <h2 id="contact-title">Get In Touch</h2>
-    <p>Email: <a href="mailto:manichand@example.com">manichand@example.com</a></p>
-    <p>Phone: +91 98765 43210</p>
-    <p>Location: Andhra Pradesh, India</p>
-  </section>
+  </main>
 
-  <footer role="contentinfo">
-    <p>© 2025 Pulugundla Manichand. All rights reserved.</p>
+  <footer>
+    &copy; 2025 Pulugundla Manichand - All rights reserved.
   </footer>
 
 </body>
