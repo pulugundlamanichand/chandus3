@@ -1,30 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Trading Account</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <title>Smart Vehicle Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            background-color: #121212;
+            color: #ffffff;
+        }
+        header {
+            background-color: #1f1f1f;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            letter-spacing: 1px;
+        }
+        .dashboard {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 30px;
+        }
+        .card {
+            background-color: #292929;
+            border-radius: 10px;
+            width: 300px;
+            margin: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        }
+        .card h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .card p {
+            font-size: 16px;
+        }
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #1f1f1f;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            font-size: 14px;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <div class="logo">TradeX</div>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="fno.html">F&O</a></li>
-        <li><a href="mutualfunds.html">Mutual Funds</a></li>
-        <li><a href="#">Portfolio</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <main>
-    <section class="hero">
-      <h1>Welcome to TradeX</h1>
-      <p>Your trusted platform for trading, F&O, and mutual fund investments.</p>
-    </section>
-  </main>
+<header>
+    🚗 Smart Vehicle Dashboard - Manichand
+</header>
+
+<div class="dashboard">
+    <div class="card">
+        <h2>Vehicle Speed</h2>
+        <p id="speed">Loading...</p>
+    </div>
+    <div class="card">
+        <h2>Engine RPM</h2>
+        <p id="rpm">Loading...</p>
+    </div>
+    <div class="card">
+        <h2>Fuel Level</h2>
+        <p id="fuel">Loading...</p>
+    </div>
+    <div class="card">
+        <h2>Location</h2>
+        <p id="location">Loading...</p>
+    </div>
+</div>
+
+<footer>
+    &copy; 2025 Manichand Automotive Solutions
+</footer>
+
+<script>
+    // Dummy data simulation - replace with real data via WebSocket, MQTT, or Firebase
+    function updateDashboard() {
+        document.getElementById('speed').innerText = Math.floor(Math.random() * 120) + ' km/h';
+        document.getElementById('rpm').innerText = Math.floor(Math.random() * 7000) + ' RPM';
+        document.getElementById('fuel').innerText = Math.floor(Math.random() * 100) + '%';
+        document.getElementById('location').innerText = 'Lat: 12.9716, Lon: 77.5946';
+    }
+
+    setInterval(updateDashboard, 2000); // Update every 2 seconds
+</script>
+
 </body>
 </html>
