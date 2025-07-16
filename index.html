@@ -2,15 +2,161 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Chandu Travel School</title>
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f9f9f9;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 0 20px;
+    }
+
+    header {
+      background: #005f73;
+      color: white;
+      padding: 20px 0;
+    }
+
+    header h1 {
+      font-size: 2rem;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-right: 15px;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      color: #94d2bd;
+      outline: none;
+    }
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+      color: white;
+      padding: 100px 0;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+    }
+
+    .btn {
+      background: #0a9396;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+      display: inline-block;
+    }
+
+    .btn:hover,
+    .btn:focus {
+      background: #94d2bd;
+      outline: none;
+    }
+
+    .info-section {
+      padding: 50px 0;
+      background: white;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .bg-light {
+      background: #e9f5f2;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #005f73;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    a {
+      color: #0a9396;
+      text-decoration: none;
+    }
+
+    a:hover,
+    a:focus {
+      text-decoration: underline;
+      outline: none;
+    }
+
+    footer {
+      background: #005f73;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      nav a {
+        display: block;
+        margin: 8px 0;
+      }
+
+      .hero h2 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
 </head>
 <body>
+
   <header>
     <div class="container">
       <h1>Chandu Travel School</h1>
-      <nav>
+      <nav aria-label="Primary navigation">
         <a href="#about">About</a>
         <a href="#courses">Courses</a>
         <a href="#contact">Contact</a>
@@ -18,7 +164,7 @@
     </div>
   </header>
 
-  <section class="hero">
+  <section class="hero" role="banner">
     <div class="container">
       <h2>Explore the World. Learn to Lead Travel.</h2>
       <p>We help students become professional tour managers and travel consultants.</p>
@@ -26,16 +172,16 @@
     </div>
   </section>
 
-  <section id="about" class="info-section">
+  <section id="about" class="info-section" role="region" aria-labelledby="about-title">
     <div class="container">
-      <h2>About Us</h2>
+      <h2 id="about-title">About Us</h2>
       <p>Chandu Travel School is a leading institute offering travel & tourism certification programs. With experienced mentors and real-world training, we prepare students for global opportunities.</p>
     </div>
   </section>
 
-  <section id="courses" class="info-section bg-light">
+  <section id="courses" class="info-section bg-light" role="region" aria-labelledby="courses-title">
     <div class="container">
-      <h2>Our Courses</h2>
+      <h2 id="courses-title">Our Courses</h2>
       <ul>
         <li>🧳 Tour Management Basics</li>
         <li>🗺️ International Travel Consultant Program</li>
@@ -45,19 +191,20 @@
     </div>
   </section>
 
-  <section id="contact" class="info-section">
+  <section id="contact" class="info-section" role="region" aria-labelledby="contact-title">
     <div class="container">
-      <h2>Contact Us</h2>
+      <h2 id="contact-title">Contact Us</h2>
       <p>Email: <a href="mailto:info@chandutravelschool.live">info@chandutravelschool.live</a></p>
       <p>Phone: +91-9876543210</p>
       <p>Location: Andhra Pradesh, India</p>
     </div>
   </section>
 
-  <footer>
+  <footer role="contentinfo">
     <div class="container">
       <p>© 2025 Chandu Travel School. All rights reserved.</p>
     </div>
   </footer>
+
 </body>
 </html>
