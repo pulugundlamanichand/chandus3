@@ -3,13 +3,8 @@ version: 0.2
 env:
   variables:
     AWS_REGION: us-east-1
-    REPOSITORY_URI: 512138916710.dkr.ecr.us-east-1.amazonaws.com/appbuildrepository
-
-phases:
-  install:
-    runtime-versions:
-      docker: 20
-
+    REPOSITORY_URI: 097423744847.dkr.ecr.us-east-1.amazonaws.com/appbuildrepository
+ 
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
