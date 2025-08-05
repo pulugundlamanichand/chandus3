@@ -1,0 +1,32 @@
+version: 0.2
+
+env:
+  variables:
+    AWS_REGION: us-east-1
+    REPOSITORY_URI: 512138916710.dkr.ecr.us-east-1.amazonaws.com/organic/myrepo
+
+phases:
+  install:
+    runtime-versions:
+      docker: 20
+
+  pre_build:
+    commands:
+      - echo Logging in to Amazon ECR...
+      - aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $REPOSITORY_URI
+
+  build:
+    commands:
+      - echo Building the Docker image...
+      - docker build -t $REPOSITORY_URI:latest .
+
+  post_build:
+    commands:
+      - echo Pushing the Docker image...
+      - docker push $REPOSITORY_URI:latest
+      - echo Creating imagedefinitions.json file...
+      - printf '[{"name":"myrepo","imageUri":"%s"}]' $REPOSITORY_URI:latest > imagedefinitions.json
+
+artifacts:
+  files:
+    - imagedefinitions.json
