@@ -3,7 +3,7 @@ version: 0.2
 env:
   variables:
     AWS_REGION: us-east-1
-    REPOSITORY_URI: 026090540155.dkr.ecr.us-east-1.amazonaws.com/tut-static-repo
+    REPOSITORY_URI: 097423744847.dkr.ecr.us-east-1.amazonaws.com/wordpress
 phases:
   pre_build:
     commands:
@@ -21,7 +21,7 @@ phases:
       - echo Pushing Docker image...
       - docker push $REPOSITORY_URI:latest
       - echo Writing imagedefinitions.json...
-      - printf '[{"name":"tut-static-repo","imageUri":"%s"}]' $REPOSITORY_URI:latest > imagedefinitions.json
+      - printf '[{"name":"wordpress","imageUri":"%s"}]' $REPOSITORY_URI:latest > imagedefinitions.json
 
 artifacts:
   files:
